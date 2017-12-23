@@ -1,5 +1,7 @@
 package gotool
 
+import "strings"
+
 // CheckRuneInRunesV1 checks whether rune in runes.
 func CheckRuneInRunesV1(runes []rune, r rune) bool {
 	for _, each := range runes {
@@ -17,6 +19,15 @@ func CheckRuneInRunesV2(runes []rune, r rune) bool {
 		set[v] = true
 	}
 	return set[r]
+}
+
+// CleanElements clean whitespaces in strings.
+func CleanElements(strList []string) []string {
+	for index, each := range strList {
+		each = strings.TrimSpace(each)
+		strList[index] = each
+	}
+	return strList
 }
 
 // Reverse reverses numbers in int slice;

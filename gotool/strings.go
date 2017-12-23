@@ -5,15 +5,6 @@ import (
 	"unicode"
 )
 
-// CleanElements clean whitespaces in strings.
-func CleanElements(strList []string) []string {
-	for index, each := range strList {
-		each = strings.TrimSpace(each)
-		strList[index] = each
-	}
-	return strList
-}
-
 // RemoveChar removes rune from string.
 func RemoveRune(source string, runeToBeRemoved rune) string {
 	return strings.Map(func(r rune) rune {
